@@ -130,7 +130,8 @@ class LoadFlyoutChildren(BrowserView):
     def set_response_headers(self):
         response = self.request.response
         response.setHeader('X-Theme-Disabled', 'True')
-        response.enableHTTPCompression(REQUEST=self.request)
+        #This might break whole python xml machinery
+        #response.enableHTTPCompression(REQUEST=self.request)
 
         if self.cachekey:
             # Do not set cache headers when no cachekey provided.
